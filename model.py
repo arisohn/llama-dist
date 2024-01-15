@@ -503,6 +503,8 @@ class Transformer(nn.Module):
         )
         """
 
+        # forward:  They use same parameter W
+        # backward: W's gradient is g1 + g2 
         # share the unembedding parameters with the embedding parameters
         self.tok_embeddings.weight = self.output.weight # https://paperswithcode.com/method/weight-tying
 
